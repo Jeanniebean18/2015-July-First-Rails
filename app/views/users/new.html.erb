@@ -1,0 +1,11 @@
+<%= @user.errors.full_messages %>
+
+<h1>Hi. Tell us about yourself. </h1> 
+
+<%= form_tag("/users", method: "post") do %>
+  <p> Name (required): <input type="text" placeholder="name" name="name" value="<%= params["name"]%>" required></p>
+  <p> Email: <input type="email" placeholder="your email" name="email" value="<%= params["email"]%>" required></p>
+  <p> Password: <input type="password" pattern=".{5,10}" placeholder="password" name="password" value="" required title="5 to 10 characters"></p>
+  <p> <input type="submit" value="submit"></p>
+</form>
+<%end %>

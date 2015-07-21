@@ -1,0 +1,22 @@
+<%= @user.errors.full_messages %>
+
+<h1>This is your profile:</h2>
+
+<h1><%= @user.name %></h1>
+
+<p><%= @user.email %></p>
+
+<p><%= @user.stories %></p>
+
+
+<a href="/users/<%= @user.id %>/edit">Edit profile</a>
+
+<%= form_tag("/users", method: "post") do %>
+  <input type="hidden" name="_method" value="delete">
+  <input type="hidden" name="user_id" value="<%= @user.id %>">
+  <input type="submit" value="delete profile">
+</form>
+<%end %>
+
+<p><a href = "/users/<%= @user.id %>/stories/new"> Add a story </a></p>
+<a href = "/users/<%= @user.id %>/stories">View all stories </a>

@@ -5,11 +5,11 @@ Rails.application.routes.draw do
   get "/users" => "users#list"
   # "users#list" name of views folder followed by method(which is also the same name as erb file.)
   
+  get "/users/new" => "users#new"  
   
-  get "/users/new" 
+  post "/users" => "users#save"
   
-  
-  
+  get "/users/:id" => "users#profile"
   
   
   
