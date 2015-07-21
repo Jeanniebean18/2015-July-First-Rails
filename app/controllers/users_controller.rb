@@ -29,6 +29,19 @@ class UsersController < ApplicationController
   def profile
     @user = User.find(params[:id])
   end
+  
+  def edit
+    @user = User.find(params[:id])
+  end
+  
+  def edit_save
+    @user = User.find(params[:id])
+    @user.name = params[:name]
+    @user.email = params[:email]
+    @user.save
+    redirect_to "users/#{@user.id}"
+    #back to profile
+  end
     
 
 end
