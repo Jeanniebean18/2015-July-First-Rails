@@ -34,5 +34,11 @@ class StoriesController < ApplicationController
     redirect_to "/users/#{@story.user_id}"
   end
   
+  def delete
+    @story = Story.find(params[:id])
+    @story.destroy
+    redirect_to "/users/#{@story.user_id}"
+  end
+  
   
 end

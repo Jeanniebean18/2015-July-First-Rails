@@ -22,7 +22,8 @@
   <%@user.stories.each do |story| %>
   <p><%= story.name %><p>
     <p><%= story.content %><p>
-      <p><a href = "/users/<%= @user.id %>/stories/<%= story.id %>/edit"> Edit story</a></p>
+      <p><a href = "/users/<%= @user.id %>/stories/<%= story.id %>/edit"> Edit Story</a></p>
+      
       <%= form_tag("/stories/#{story.id}", method: "post") do %>
       <input type="hidden" name="_method" value="delete">
       <input type="submit" value="delete">
