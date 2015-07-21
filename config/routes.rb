@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # "users#list" name of views folder followed by method(which is also the same name as erb file.)
   
   
-  
+  get "/users/new" 
   
   
   
