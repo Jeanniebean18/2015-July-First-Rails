@@ -23,6 +23,14 @@ Rails.application.routes.draw do
   
   get "/logout" => "users#logout"
   
+  get "users/:user_id/stories/:id/edit" =>"stories#edit"
+  
+  put "/stories/:id" => "stories#edit_save"
+  
+  get "/users/:id/stories/new" => "stories#new"
+  
+  post "/stories/" => "stories#save"
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
