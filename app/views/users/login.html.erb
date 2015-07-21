@@ -1,0 +1,7 @@
+<%= @user.errors.full_messages %>
+
+<%= form_tag("/users/valid", method: "post") do %>
+<input id="name" type="text" placeholder="Email" name="email">
+<input id="password" type="text" placeholder="Password" name="password">
+<input type="submit">
+<%end %>

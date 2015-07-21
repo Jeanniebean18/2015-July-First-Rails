@@ -15,6 +15,14 @@ Rails.application.routes.draw do
   
   put "/users/:id" => "users#edit_save"
   
+  delete "/users/:id" => "users#delete"
+  
+  get "/login" => "users#login"
+  
+  post "/users/valid" => "users#valid"
+  
+  get "/logout" => "users#logout"
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

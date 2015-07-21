@@ -11,12 +11,12 @@
 
 <a href="/users/<%= @user.id %>/edit">Edit profile</a>
 
-<%= form_tag("/users", method: "post") do %>
+<%= form_tag("/users/#{@user.id}", method: "post") do %>
   <input type="hidden" name="_method" value="delete">
-  <input type="hidden" name="user_id" value="<%= @user.id %>">
+  <input type="hidden" name="id" value="<%= @user.id %>">
   <input type="submit" value="delete profile">
-</form>
 <%end %>
 
 <p><a href = "/users/<%= @user.id %>/stories/new"> Add a story </a></p>
 <a href = "/users/<%= @user.id %>/stories">View all stories </a>
+<p><a href = "/logout">log out </a></p>
